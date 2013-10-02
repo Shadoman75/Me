@@ -1,0 +1,18 @@
+name: MePlugin
+main: io.github.shadoman75.MePlugin.MePlugin
+version: 0.0.1
+commands:
+  me:
+    description: shows something happening to the player
+    usage: /me [message]
+    permission: blah.me
+    permission-message: Arrgh, you dont have permission!
+
+permissions:
+  blah.*:
+    description: honestly, i used this as filler for this so... blah de blah blah
+    children:
+      blah.me: true
+  blah.me:
+    description: Gives access to the Me plugin, which, by the way, is AWESOME
+    default: true
