@@ -17,17 +17,22 @@ public final class MePlugin extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd,
 		String commandLabel, String[] args) {
 		
-		Player player = (Player) sender;
 		// if someone just happened to type /me and wanted to have a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
 			
-			for(String msg: args)
+			if(args.length > 0){
+			
+				for(String msg: args)
 				
-			for(Player p :(Player)sender).getworld().getplayers(){
-				p.sendMessage(ChatColor.AQUA + "~" + player + msg);
+				for(Player p:(Player)sender).getworld().getplayers();{
+					p.sendMessage(ChatColor.AQUA + "~" + player + " " + msg);
+				
+				}
 				return true;
+			} else {
+				
 			}
-		return false;
+			return false;
 		}
 	}
 
