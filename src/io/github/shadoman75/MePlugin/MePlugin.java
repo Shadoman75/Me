@@ -15,12 +15,13 @@ public final class MePlugin extends JavaPlugin {
 		getLogger().info("Enabled hopefully");
 	}
 	public boolean onCommand(CommandSender sender, Command cmd,
-		String commandLabel, String[] args); {
+		String commandLabel, String[] args) {
+		
 		Player player = (Player) sender;
 		// if someone just happened to type /me and wanted to have a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
 			
-			sendMessage();
+			(Player p:(Player)sender).getworld().getplayers().sendMessage(ChatColor.AQUA + "~" + player + );
 		}
 	}
 
