@@ -21,7 +21,8 @@ public final class MePlugin extends JavaPlugin {
 		// if someone just happened to type /me and wanted to have a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
 			
-			(Player p:(Player)sender).getworld().getplayers().sendMessage(ChatColor.AQUA + "~" + player + );
+			for(String msg: args)
+			(Player p:(Player)sender).getworld().getplayers().sendMessage(ChatColor.AQUA + "~" + player + msg );
 		}
 	}
 
