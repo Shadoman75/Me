@@ -22,8 +22,14 @@ public final class MePlugin extends JavaPlugin {
 		if(cmd.getName().equalsIgnoreCase("me")){
 			
 			for(String msg: args)
-			(Player p:(Player)sender).getworld().getplayers().sendMessage(ChatColor.AQUA + "~" + player + msg );
+				
+			for(Player p :(Player)sender).getworld().getplayers(){
+				p.sendMessage(ChatColor.AQUA + "~" + player + msg);
+				return true;
+			}
+		return false;
 		}
 	}
 
 }
+// for(String msg: args) we will be setting this somewhere else in a bit... when i figure out where...
