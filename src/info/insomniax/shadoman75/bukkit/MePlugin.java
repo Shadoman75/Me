@@ -12,12 +12,12 @@ public final class MePlugin extends JavaPlugin {
 		getLogger().info("Disabled... for now");
 	}
 	public void onEnable(){
-		getLogger().info("Enabled hopefully");
+		getLogger().info("Enabled... for now");
 	}
 	public boolean onCommand(CommandSender sender, Command cmd,
 		String commandLabel, String[] args) {
 		
-		// if someone just happened to type /me and wanted to have a message after it...
+		// if someone just happened to type /me and had a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
 			
 			if(args.length > 0){
@@ -45,4 +45,3 @@ public final class MePlugin extends JavaPlugin {
 	}
 
 }
-// for(String msg: args) we will be setting this somewhere else in a bit... when i figure out where...
