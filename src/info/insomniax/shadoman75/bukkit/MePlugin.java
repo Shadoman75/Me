@@ -17,7 +17,11 @@ public final class MePlugin extends JavaPlugin {
 		getLogger().info("Enabled... for now");
 		permissions = new PermissionsHandler(this);
 		if(permissions.setupPermissions()){
-			// setting up permissions!!!!!
+			getLogger().info("Setting Up Permissions");
+	
+		} else {
+			getLogger().info("failed to setup Permissions");
+			this.getServer().getPluginManager().disablePlugin(this);
 		}
 	}
 	public PermissionsHandler permissions = null;
@@ -27,6 +31,7 @@ public final class MePlugin extends JavaPlugin {
 		
 		// if someone just happened to type /me and had a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
+			if(permissions.has(sender, blah)){
 			
 			if(args.length > 0){
 				// ARGUMENT LOOP START!

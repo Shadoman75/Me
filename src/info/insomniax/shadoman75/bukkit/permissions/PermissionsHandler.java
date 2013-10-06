@@ -23,7 +23,7 @@ public class PermissionsHandler {
         return (permission != null);
     }
     public boolean has(CommandSender sender, String node){
-    	return permission.has(sender,node);
+    	return permission.has(sender, node);
 
     	
     }
