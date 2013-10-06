@@ -50,9 +50,7 @@ public final class MePlugin extends JavaPlugin {
 						
 					}
 					return true;
-				} else {
-				
-				}
+				} 
 			}
 		}
 		return false;
