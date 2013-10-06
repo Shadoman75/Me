@@ -35,7 +35,7 @@ public final class MePlugin extends JavaPlugin {
 
 				// now buffer.toString() has your arguments separated by spaces.
 
-				for(Player p:(Player)sender).getworld().getplayers();{
+				for(Player p:((Player)sender).getworld().getplayers());{
 					p.sendMessage(ChatColor.AQUA + "~" + sender.getName() + " " + buffer.toString());
 				
 				}
