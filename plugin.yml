@@ -1,6 +1,7 @@
 name: MePlugin
-main: io.github.shadoman75.MePlugin.MePlugin
+main: info.insomniax.shadoman75.bukkit.MePlugin
 version: 0.0.1
+depend: [Vault]
 commands:
   me:
     description: shows something happening to the player

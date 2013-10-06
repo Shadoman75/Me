@@ -31,27 +31,28 @@ public final class MePlugin extends JavaPlugin {
 		
 		// if someone just happened to type /me and had a message after it...
 		if(cmd.getName().equalsIgnoreCase("me")){
-			if(permissions.has(sender, blah)){
+			if(permissions.has(sender, "meplugin.me")){
 			
-			if(args.length > 0){
-				// ARGUMENT LOOP START!
-				StringBuilder buffer = new StringBuilder();
+				if(args.length > 0){
+					// ARGUMENT LOOP START!
+					StringBuilder buffer = new StringBuilder();
 
-				for(int i = 0; i < args.length; i++)
-				{
-				    buffer.append(' ').append(args[i]);
+					for(int i = 0; i < args.length; i++)
+					{
+						buffer.append(' ').append(args[i]);
+					}
+					// argument loop end...
+				
+					// PLAYER LOOPZ!
+					for(Player p:((Player)sender).getWorld().getPlayers()){
+						// and the message will be sent here :o
+						p.sendMessage(ChatColor.AQUA + "~" + " " + sender.getName() + buffer.toString());
+						
+					}
+					return true;
+				} else {
+				
 				}
-				// argument loop end...
-				
-				// PLAYER LOOPZ!
-				for(Player p:((Player)sender).getWorld().getPlayers()){
-					// and the message will be sent here :o
-					p.sendMessage(ChatColor.AQUA + "~" + " " + sender.getName() + buffer.toString());
-				
-				}
-				return true;
-			} else {
-				
 			}
 		}
 		return false;
