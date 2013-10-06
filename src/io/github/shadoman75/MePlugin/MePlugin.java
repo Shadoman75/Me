@@ -1,5 +1,7 @@
 package io.github.shadoman75.MePlugin;
 
+import java.nio.Buffer;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -22,10 +24,19 @@ public final class MePlugin extends JavaPlugin {
 			
 			if(args.length > 0){
 			
-				for(String msg: args)
-				
+				StringBuilder buffer = new StringBuilder();
+
+				// change the starting i value to pick what argument to start from
+				// 1 is the 2nd argument.
+				for(int i = 1; i < args.length; i++)
+				{
+				    buffer.append(' ').append(args[i]);
+				}
+
+				// now buffer.toString() has your arguments separated by spaces.
+
 				for(Player p:(Player)sender).getworld().getplayers();{
-					p.sendMessage(ChatColor.AQUA + "~" + player + " " + msg);
+					p.sendMessage(ChatColor.AQUA + "~" + sender.getName() + " " + buffer.toString());
 				
 				}
 				return true;
