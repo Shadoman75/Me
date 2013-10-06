@@ -1,5 +1,7 @@
 package info.insomniax.shadoman75.bukkit;
 
+import info.insomniax.shadoman75.bukkit.permissions.PermissionsHandler;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -13,7 +15,13 @@ public final class MePlugin extends JavaPlugin {
 	}
 	public void onEnable(){
 		getLogger().info("Enabled... for now");
+		permissions = new PermissionsHandler(this);
+		if(permissions.setupPermissions()){
+			// setting up permissions!!!!!
+		}
 	}
+	public PermissionsHandler permissions = null;
+	
 	public boolean onCommand(CommandSender sender, Command cmd,
 		String commandLabel, String[] args) {
 		
