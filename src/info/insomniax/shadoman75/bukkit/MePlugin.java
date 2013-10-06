@@ -1,4 +1,4 @@
-package io.github.shadoman75.MePlugin;
+package info.insomniax.shadoman75.bukkit;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
